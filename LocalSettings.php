@@ -45,7 +45,7 @@ $wgExtensionFunctions[] = function() {
     );
 };
 
-$wgConf = new SiteConfiguration;"
+$wgConf = new SiteConfiguration;
 
 $wgConf->settings = [
 
