@@ -190,9 +190,9 @@ $wgConf->settings = [
 	],
     'wgNamespaceContentModels' => [
 	    'default' => [
-		 'NS_PROJECT_TALK' => 'flow-board',
-         'NS_TALK'         => 'flow-board',
-         'NS_USER_TALK'    => 'flow-board',
+	       'NS_PROJECT_TALK' => 'flow-board',
+               'NS_TALK'         => 'flow-board',
+               'NS_USER_TALK'    => 'flow-board',
 	  ], 
 	],
 	'wgManageWikiPermissionsAdditionalRights' => [
