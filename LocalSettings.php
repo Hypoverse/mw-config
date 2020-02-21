@@ -30,6 +30,23 @@ $wgIncludeLegacyJavaScript = true;
 $wgDefaultSkin = "vector";
 $wgSkipSkins = array( 'cologneblue', 'modern');
 
+$wgExtensionFunctions[] = function() {
+    global $wgGroupPermissions;
+    
+    unset(
+        $wgGroupPermissions['checkuser'],
+        $wgGroupPermissions['commentadmin'],
+        $wgGroupPermissions['interface-admin'],
+        $wgGroupPermissions['flow-bot'],
+        $wgGroupPermissions['oversight'],
+        $wgGroupPermissions['staff'],
+        $wgGroupPermissions['steward'],
+        $wgGroupPermissions['suppress']
+    );
+};
+
+$wgConf = new SiteConfiguration;"
+
 $wgConf->settings = [
 
 ## Global Settings ##
@@ -104,12 +121,12 @@ $wgConf->settings = [
   ],	     
     '+wgRestrictionLevels' => [
        'default' => [
-             'autoconfirmed',
-	     'extendedconfirmed',
-	     'sysop',
-	     'bureaucrat',
-	     'wiki-leader',
-	     'staff',
+            'autoconfirmed',
+	    'extendedconfirmed',
+	    'sysop',
+	    'bureaucrat',
+	    'wiki-leader',
+	    'staff',
        ],
    ], 
     'wgFileExtensions' => [
@@ -173,9 +190,9 @@ $wgConf->settings = [
 	],
     'wgNamespaceContentModels' => [
 	    'default' => [
-	       'NS_PROJECT_TALK' => 'flow-board',
-               'NS_TALK'         => 'flow-board',
-               'NS_USER_TALK'    => 'flow-board',
+		 'NS_PROJECT_TALK' => 'flow-board',
+         'NS_TALK'         => 'flow-board',
+         'NS_USER_TALK'    => 'flow-board',
 	  ], 
 	],
 	'wgManageWikiPermissionsAdditionalRights' => [
