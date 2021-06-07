@@ -103,3 +103,18 @@ require_once "LocalExtensions.php";
 require_once "LocalPermissions.php";
 require_once "LocalDatabase.php";
 
+## Other Settings
+$wgExtensionFunctions[] = function() {
+    global $wgGroupPermissions;
+    
+    unset(
+        $wgGroupPermissions['commentadmin'],
+        $wgGroupPermissions['flow-bot'],
+        $wgGroupPermissions['giftadmin'],
+        $wgGroupPermissions['interface-admin'],
+        $wgGroupPermissions['staff'],
+        $wgGroupPermissions['steward'],
+        $wgGroupPermissions['suppress']
+    );
+
+};
